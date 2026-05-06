@@ -359,12 +359,26 @@
     box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     border-color: #e10600;
   }
-  .service-card-img {
-    width: 100%; height: 220px;
-    object-fit: cover;
-    transition: transform 0.7s ease;
+  .service-card-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    position: relative;
   }
-  .service-card:hover .service-card-img { transform: scale(1.08); }
+  .service-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.7s ease;
+    display: block;
+  }
+  .service-card:hover .service-card-img { transform: scale(1.05); }
   .service-icon {
     position: absolute;
     top: 16px; right: 16px;
@@ -643,25 +657,57 @@
   }
   .mobile-overlay.active { opacity: 1; visibility: visible; }
 
-  /* WhatsApp floating */
-  .whatsapp-float {
+  /* Floating action buttons (WhatsApp + Phone) */
+  .float-actions {
     position: fixed;
-    bottom: 24px; right: 24px;
+    bottom: 24px;
+    right: 24px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .whatsapp-float, .phone-float {
     width: 60px; height: 60px;
-    background: #25D366;
     color: #fff;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 28px;
-    z-index: 50;
-    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
-    animation: wp-pulse 2.5s ease-in-out infinite;
     transition: transform 0.3s ease;
   }
-  .whatsapp-float:hover { transform: scale(1.1); }
+  .whatsapp-float {
+    background: #25D366;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+    animation: wp-pulse 2.5s ease-in-out infinite;
+  }
+  .phone-float {
+    background: #1e6dd8;
+    box-shadow: 0 8px 30px rgba(30,109,216,0.5);
+    animation: phone-pulse 2.5s ease-in-out infinite;
+    animation-delay: 1.25s;
+  }
+  .whatsapp-float:hover, .phone-float:hover { transform: scale(1.12); }
+
   @keyframes wp-pulse {
     0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.7); }
     50% { box-shadow: 0 8px 30px rgba(37,211,102,0.5), 0 0 0 18px rgba(37,211,102,0); }
+  }
+  @keyframes phone-pulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(30,109,216,0.5), 0 0 0 0 rgba(30,109,216,0.7); }
+    50% { box-shadow: 0 8px 30px rgba(30,109,216,0.5), 0 0 0 18px rgba(30,109,216,0); }
+  }
+
+  @media (max-width: 768px) {
+    .float-actions {
+      bottom: 18px;
+      right: 18px;
+      gap: 12px;
+    }
+    .whatsapp-float, .phone-float {
+      width: 56px; height: 56px;
+      font-size: 26px;
+    }
   }
 
   /* Hero text glow */
@@ -975,7 +1021,7 @@
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <article class="service-card" data-aos="fade-up" data-aos-delay="50">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/dolap.webp" alt="Mutfak Dolabı İmalatı" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-utensils"></i></div>
         </div>
@@ -986,7 +1032,7 @@
       </article>
 
       <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/yatak-odasi-dekorasyon2.webp" alt="Yatak Odası Takımı" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-bed"></i></div>
         </div>
@@ -997,7 +1043,7 @@
       </article>
 
       <article class="service-card" data-aos="fade-up" data-aos-delay="150">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/cekmece.webp" alt="Çocuk ve Genç Odası" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-child"></i></div>
         </div>
@@ -1008,7 +1054,7 @@
       </article>
 
       <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/mutfak-dekorasyon.webp" alt="Banyo Dolabı" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-bath"></i></div>
         </div>
@@ -1019,7 +1065,7 @@
       </article>
 
       <article class="service-card" data-aos="fade-up" data-aos-delay="50">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/tv-unitesi.webp" alt="TV Ünitesi" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-tv"></i></div>
         </div>
@@ -1030,7 +1076,7 @@
       </article>
 
       <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/salon-dekorasyon.webp" alt="Ev Dekorasyonu" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-home"></i></div>
         </div>
@@ -1041,7 +1087,7 @@
       </article>
 
       <article class="service-card" data-aos="fade-up" data-aos-delay="150">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/isyeri-dekorasyon2.webp" alt="İşyeri Dekorasyonu" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-briefcase"></i></div>
         </div>
@@ -1052,7 +1098,7 @@
       </article>
 
       <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative overflow-hidden">
+        <div class="service-card-img-wrapper">
           <img src="/images/isyeri-dekorasyon3.webp" alt="Mobilya Montajı" class="service-card-img" loading="lazy" />
           <div class="service-icon"><i class="fas fa-tools"></i></div>
         </div>
@@ -1420,10 +1466,15 @@
   </div>
 </footer>
 
-<!-- WhatsApp Floating -->
-<a href="https://wa.me/905321783471" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+<!-- Floating Action Buttons -->
+<div class="float-actions">
+  <a href="tel:05321783471" class="phone-float" aria-label="Hemen Ara">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+  <a href="https://wa.me/905321783471" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
 
 <!-- ============== STRUCTURED DATA / SCHEMA ============== -->
 <script type="application/ld+json">
