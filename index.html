@@ -63,15 +63,26 @@
     --c-gray-deep: #0a0a0a;
   }
 
-  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', sans-serif;
     background: #ffffff;
     color: #1a1a1a;
-    overflow-x: hidden;
+    position: relative;
   }
-  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; letter-spacing: -0.02em; }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  img, video, iframe { max-width: 100%; height: auto; }
 
   /* Scrollbar */
   ::-webkit-scrollbar { width: 10px; }
@@ -158,7 +169,7 @@
   /* CTA Buttons */
   .btn-primary {
     position: relative;
-    display: inline-flex; align-items: center; gap: 10px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     padding: 16px 36px;
     background: #e10600;
     color: #fff;
@@ -167,6 +178,8 @@
     transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(225,6,0,0.35);
+    white-space: nowrap;
+    max-width: 100%;
   }
   .btn-primary::before {
     content: '';
@@ -182,7 +195,7 @@
     box-shadow: 0 10px 40px rgba(225,6,0,0.55);
   }
   .btn-outline {
-    display: inline-flex; align-items: center; gap: 10px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     padding: 16px 36px;
     background: transparent;
     color: #fff;
@@ -190,6 +203,8 @@
     border-radius: 8px;
     border: 2px solid #fff;
     transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+    white-space: nowrap;
+    max-width: 100%;
   }
   .btn-outline:hover {
     background: #fff;
@@ -208,10 +223,13 @@
 
   /* Section title */
   .section-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(1.6rem, 4vw, 3.5rem);
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.2;
     margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .section-subtitle {
     color: #e10600;
@@ -239,6 +257,7 @@
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(225,6,0,0.15);
+    max-width: 100%;
   }
   .premium-banner::before {
     content: '';
@@ -448,6 +467,7 @@
     background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
+    max-width: 100%;
   }
   .cta-section::before {
     content: '';
@@ -562,10 +582,13 @@
 
   /* Hero text glow */
   .hero-title {
-    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-size: clamp(1.7rem, 5vw, 4.5rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.15;
     text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .hero-title span { color: #e10600; }
 
@@ -574,6 +597,7 @@
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
+    max-width: 100%;
   }
   .why-us::before {
     content: '';
@@ -621,8 +645,34 @@
     .hero-swiper { height: 90vh; min-height: 580px; }
     .hero-swiper .swiper-button-next,
     .hero-swiper .swiper-button-prev { display: none; }
-    .premium-banner { border-radius: 16px; }
-    .btn-primary, .btn-outline { padding: 14px 28px; font-size: 0.95rem; }
+    .premium-banner { border-radius: 16px; padding: 1.5rem !important; }
+    .btn-primary, .btn-outline {
+      padding: 14px 24px;
+      font-size: 0.9rem;
+      width: auto;
+    }
+    .container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    .tracking-\[4px\] { letter-spacing: 2px !important; }
+    .section-subtitle { letter-spacing: 2px; }
+    .stat-number { font-size: 2.4rem !important; }
+    .region-card { padding: 20px; }
+    .contact-card { padding: 24px; }
+    .article-content h3 { font-size: 1.3rem; }
+    .article-content p { font-size: 0.95rem; }
+    /* Footer'da uzun linkler taşmasın */
+    .footer-link { font-size: 0.9rem; }
+  }
+  @media (max-width: 480px) {
+    .premium-banner { padding: 1.25rem !important; }
+    .btn-primary, .btn-outline {
+      padding: 12px 20px;
+      font-size: 0.85rem;
+    }
+    .hero-content { padding-top: 80px; }
+    .container { padding-left: 0.875rem !important; padding-right: 0.875rem !important; }
   }
 </style>
 </head>
