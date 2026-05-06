@@ -96,7 +96,54 @@
     border-bottom: 1px solid rgba(225,6,0,0.15);
   }
 
-  /* Header */
+  /* Logo - büyük görünüm, header yüksekliğini etkilemesin */
+  .header-logo {
+    height: 200px !important;
+    width: auto;
+    margin-top: -60px;
+    margin-bottom: -60px;
+    transition: transform 0.3s ease;
+  }
+  .header-logo:hover { transform: scale(1.05); }
+
+  .mobile-menu-logo {
+    height: 140px !important;
+    width: auto;
+    margin: -30px 0;
+  }
+
+  .footer-logo {
+    height: 240px !important;
+    width: auto;
+    margin: -60px 0 -40px -20px;
+  }
+
+  @media (max-width: 768px) {
+    .header-logo {
+      height: 140px !important;
+      margin-top: -40px;
+      margin-bottom: -40px;
+    }
+    .footer-logo {
+      height: 180px !important;
+      margin: -40px 0 -30px -10px;
+    }
+    .mobile-menu-logo {
+      height: 110px !important;
+      margin: -20px 0;
+    }
+  }
+  @media (max-width: 480px) {
+    .header-logo {
+      height: 110px !important;
+      margin-top: -30px;
+      margin-bottom: -30px;
+    }
+  }
+
+  /* Header'da logo overflow için */
+  .site-header .container { overflow: visible; }
+
   .site-header {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(0,0,0,0.92);
@@ -708,7 +755,7 @@
 <header id="siteHeader" class="site-header fixed w-full top-0 left-0 z-40">
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
     <a href="#anasayfa" class="flex items-center gap-3" aria-label="Çakmakoğlu Mobilya">
-      <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya Logo" class="h-12 md:h-14 w-auto" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+      <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya Logo" class="header-logo" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
       <span style="display:none" class="text-white font-display text-xl font-bold">Çakmakoğlu</span>
     </a>
 
@@ -738,7 +785,7 @@
 <div id="mobileOverlay" class="mobile-overlay"></div>
 <aside id="mobileMenu" class="mobile-menu" aria-label="Mobil Menü">
   <div class="flex justify-between items-center mb-8">
-    <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya" class="h-12 w-auto" />
+    <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya" class="mobile-menu-logo" />
     <button id="menuClose" class="text-white text-2xl" aria-label="Menüyü Kapat">
       <i class="fas fa-times"></i>
     </button>
@@ -1271,7 +1318,7 @@
   <div class="container mx-auto px-6">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div>
-        <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya" class="h-16 w-auto mb-5" loading="lazy" />
+        <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya" class="footer-logo" loading="lazy" />
         <p class="text-white/70 text-sm leading-relaxed mb-6">
           Bartın, Karabük ve Zonguldak'ta profesyonel mobilya imalatı ve anahtar teslim iç dekorasyon hizmetleri.
         </p>
