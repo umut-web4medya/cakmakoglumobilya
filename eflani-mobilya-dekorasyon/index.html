@@ -144,6 +144,8 @@
     padding: 180px 0 100px;
     overflow: hidden;
   }
+  .page-hero, .page-hero p, .page-hero h1, .page-hero .breadcrumb { color: #fff; }
+  .page-hero p { color: rgba(255,255,255,0.9); }
   .page-hero::before {
     content: '';
     position: absolute;
@@ -744,7 +746,7 @@
 
 <body>
 
-<!-- TOP BAR -->
+<!-- ============== TOP BAR ============== -->
 <div class="top-bar text-white text-sm py-2 hidden md:block">
   <div class="container mx-auto px-6 flex justify-between items-center">
     <div class="flex items-center gap-6">
@@ -754,10 +756,11 @@
       </a>
       <span class="flex items-center gap-2 text-gray-400">
         <i class="fas fa-map-marker-alt text-brand-red"></i>
-        <span>Eflani / Karabük</span>
+        <span>Bartın, Karabük, Zonguldak</span>
       </span>
     </div>
     <div class="flex items-center gap-4">
+      <span class="text-gray-400 hidden lg:inline">Bizi Sosyal Medyada Takip Edin:</span>
       <a href="https://www.instagram.com/cakmakoglu.mobilya/" target="_blank" rel="noopener" class="hover:text-brand-red transition" aria-label="Instagram">
         <i class="fab fa-instagram text-base"></i>
       </a>
@@ -768,11 +771,12 @@
   </div>
 </div>
 
-<!-- HEADER -->
+<!-- ============== HEADER ============== -->
 <header id="siteHeader" class="site-header fixed w-full top-0 left-0 z-40">
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="/" class="flex items-center gap-3" aria-label="Çakmakoğlu Mobilya Anasayfa">
-      <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya" class="header-logo" loading="eager" />
+    <a href="/" class="flex items-center gap-3" aria-label="Çakmakoğlu Mobilya">
+      <img src="/images/cakmakoglumobilya-logo.png" alt="Çakmakoğlu Mobilya Logo" class="header-logo" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+      <span style="display:none" class="text-white font-display text-xl font-bold">Çakmakoğlu</span>
     </a>
 
     <nav class="hidden lg:flex items-center gap-8" aria-label="Ana Menü">
@@ -786,7 +790,8 @@
 
     <div class="hidden lg:flex items-center gap-3">
       <a href="tel:05321783471" class="btn-primary btn-call text-sm" style="padding:12px 24px">
-        <i class="fas fa-phone-alt"></i> Hemen Ara
+        <i class="fas fa-phone-alt"></i>
+        Hemen Ara
       </a>
     </div>
 
@@ -821,6 +826,12 @@
       <i class="fab fa-whatsapp"></i> WhatsApp
     </a>
   </div>
+  <div class="mt-8 pt-8 border-t border-white/10 text-center">
+    <p class="text-white/60 text-sm mb-3">Bizi takip edin</p>
+    <a href="https://www.instagram.com/cakmakoglu.mobilya/" target="_blank" rel="noopener" class="text-white text-2xl hover:text-brand-red transition">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
 </aside>
 
 <!-- ============== PAGE HERO ============== -->
@@ -842,7 +853,7 @@
       Eflani <span>Mobilya Dekorasyon</span> Hizmetleri
     </h1>
 
-    <p class="text-white/85 text-lg md:text-xl max-w-3xl mb-8" data-aos="fade-up" data-aos-delay="200">
+    <p class="text-white/90 text-lg md:text-xl max-w-3xl mb-8" data-aos="fade-up" data-aos-delay="200">
       Eflani merkez ve 54 köyünde mutfak dolabı imalatı, yatak odası takımı, banyo dolabı, mobilya ustası, mobilya tamiri ve anahtar teslim iç dekorasyon hizmetleri. 15+ yıl tecrübeyle Çakmakoğlu Mobilya hizmetinizde.
     </p>
 
@@ -1105,14 +1116,15 @@
 </section>
 
 <!-- ============== KOMŞU İLÇELER ============== -->
-<section class="py-16 md:py-20 bg-white">
+<section class="py-24 md:py-28 bg-brand-gray relative">
   <div class="container mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+    <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
       <span class="section-subtitle">Yakındaki Hizmet Bölgeleri</span>
       <h2 class="section-title">Eflani Çevresinde de <span class="text-brand-red">Hizmetinizdeyiz</span></h2>
+      <p class="text-gray-600 text-lg mt-4">Eflani'ye yakın diğer ilçelerimizde de aynı kaliteli mobilya & dekorasyon hizmetlerini sunuyoruz.</p>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3" data-aos="fade-up" data-aos-delay="100">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="100">
       <a href="/safranbolu-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Safranbolu Mobilya</a>
       <a href="/eskipazar-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Eskipazar Mobilya</a>
       <a href="/ovacik-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Ovacık Mobilya</a>
