@@ -102,6 +102,11 @@
   /* Header */
   .site-header .container { overflow: visible; }
   .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(0,0,0,0.92);
     backdrop-filter: blur(12px);
@@ -1405,7 +1410,6 @@
       font-size: 0.85rem;
     }
     .hero-content { padding-top: 80px; }
-    .container { padding-left: 0.875rem !important; padding-right: 0.875rem !important; }
   }
 </style>
 </head>
