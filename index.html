@@ -647,6 +647,28 @@
     border-radius: 2px;
   }
 
+  /* Footer içi il başlıkları */
+  .footer-region-city {
+    color: #e10600;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-region-city::before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background: #e10600;
+    display: inline-block;
+  }
+  .footer-region-group { margin-top: -4px; }
+
   .footer-link {
     color: rgba(255,255,255,0.65);
     transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
@@ -906,7 +928,24 @@
     overflow-wrap: break-word;
     hyphens: auto;
   }
-  .hero-title span { color: #e10600; }
+  .hero-title span {
+    color: #1a1a1a;
+    background: linear-gradient(120deg, #ffd400 0%, #ffec3d 100%);
+    padding: 0 14px;
+    border-radius: 4px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(255,212,0,0.3);
+    line-height: 1.1;
+    margin: 4px 0;
+  }
+  @media (max-width: 768px) {
+    .hero-title span {
+      padding: 0 10px;
+      box-shadow: 0 2px 8px rgba(255,212,0,0.25);
+    }
+  }
 
   /* Why us section */
   .why-us {
@@ -1107,6 +1146,226 @@
     from { opacity: 0; transform: translateY(15px) scale(0.9); }
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
+
+  /* Tıklanabilir il rozetleri */
+  .keyword-badge-primary {
+    cursor: pointer;
+    position: relative;
+  }
+  .keyword-badge-primary::after {
+    content: '\f095';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 9px;
+    color: #e10600;
+    margin-left: 6px;
+    opacity: 0.9;
+  }
+  .keyword-badge-primary:hover {
+    background: #e10600;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(225,6,0,0.4);
+  }
+  .keyword-badge-primary:hover::after { color: #fff; }
+  .keyword-badge-primary:hover i { color: #fff; }
+
+  /* ===== City Modal (Bottom Sheet on mobile, Centered on desktop) ===== */
+  .city-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 110;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .city-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .city-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    background: #fff;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 440px;
+    z-index: 111;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  }
+  .city-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .city-modal-header {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    padding: 30px 28px 24px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  .city-modal-header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 70%; height: 200%;
+    background: radial-gradient(circle, rgba(225,6,0,0.25) 0%, transparent 60%);
+    animation: city-glow 4s ease-in-out infinite;
+  }
+  @keyframes city-glow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
+  }
+  .city-modal-icon {
+    width: 60px; height: 60px;
+    background: #e10600;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 25px rgba(225,6,0,0.45);
+    position: relative;
+    z-index: 2;
+  }
+  .city-modal-title {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 2;
+  }
+  .city-modal-subtitle {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.92rem;
+    position: relative;
+    z-index: 2;
+  }
+  .city-modal-body {
+    padding: 28px;
+    text-align: center;
+  }
+  .city-modal-phone-label {
+    font-size: 0.78rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .city-modal-phone {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  .city-modal-phone:hover { color: #e10600; }
+  .city-modal-actions {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .city-modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    text-decoration: none;
+  }
+  .city-modal-btn-call {
+    background: #1e6dd8;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(30,109,216,0.35);
+  }
+  .city-modal-btn-call:hover {
+    background: #1557b0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30,109,216,0.5);
+  }
+  .city-modal-btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+  }
+  .city-modal-btn-whatsapp:hover {
+    background: #1ebe5a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37,211,102,0.5);
+  }
+  .city-modal-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.3s ease;
+    font-size: 14px;
+  }
+  .city-modal-close:hover {
+    background: rgba(255,255,255,0.25);
+    transform: rotate(90deg);
+  }
+  .city-modal-trust {
+    background: #f9f9f9;
+    padding: 14px 24px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #666;
+    border-top: 1px solid #eee;
+  }
+  .city-modal-trust strong { color: #e10600; }
+
+  /* Mobil için bottom-sheet stili */
+  @media (max-width: 640px) {
+    .city-modal {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(100%);
+      width: 100%;
+      max-width: none;
+      border-radius: 24px 24px 0 0;
+    }
+    .city-modal.active {
+      transform: translateY(0);
+    }
+    .city-modal-header { padding: 28px 22px 22px; }
+    .city-modal-body { padding: 24px 22px; }
+    .city-modal-phone { font-size: 1.6rem; }
+    .city-modal-title { font-size: 1.3rem; }
+  }
+  /* ===== End City Modal ===== */
 
   /* Form / Contact */
   .contact-card {
@@ -1452,9 +1711,9 @@
     </div>
 
     <div class="keyword-cloud" data-aos="fade-up" data-aos-delay="100">
-      <span class="keyword-badge keyword-badge-primary" style="animation-delay:0.05s"><i class="fas fa-star"></i> Bartın Mobilya Dekorasyon</span>
-      <span class="keyword-badge keyword-badge-primary" style="animation-delay:0.10s"><i class="fas fa-star"></i> Karabük Mobilya Dekorasyon</span>
-      <span class="keyword-badge keyword-badge-primary" style="animation-delay:0.15s"><i class="fas fa-star"></i> Zonguldak Mobilya Dekorasyon</span>
+      <span class="keyword-badge keyword-badge-primary" data-city="Bartın" style="animation-delay:0.05s"><i class="fas fa-star"></i> Bartın Mobilya Dekorasyon</span>
+      <span class="keyword-badge keyword-badge-primary" data-city="Karabük" style="animation-delay:0.10s"><i class="fas fa-star"></i> Karabük Mobilya Dekorasyon</span>
+      <span class="keyword-badge keyword-badge-primary" data-city="Zonguldak" style="animation-delay:0.15s"><i class="fas fa-star"></i> Zonguldak Mobilya Dekorasyon</span>
       <span class="keyword-badge" style="animation-delay:0.20s"><i class="fas fa-tools"></i> Mobilya Ustası</span>
       <span class="keyword-badge" style="animation-delay:0.25s"><i class="fas fa-screwdriver-wrench"></i> Mobilya Tamircisi</span>
       <span class="keyword-badge" style="animation-delay:0.30s"><i class="fas fa-utensils"></i> Mutfak Dolabı İmalatı</span>
@@ -2045,19 +2304,33 @@
       <!-- Hizmet Bölgeleri -->
       <div class="lg:col-span-3">
         <h4 class="footer-section-title">Hizmet Bölgeleri</h4>
-        <div class="grid grid-cols-2 gap-x-3 gap-y-1">
-          <a href="/safranbolu-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Safranbolu</a>
-          <a href="/amasra-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Amasra</a>
-          <a href="/eregli-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Ereğli</a>
-          <a href="/devrek-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Devrek</a>
-          <a href="/eskipazar-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Eskipazar</a>
-          <a href="/caycuma-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Çaycuma</a>
-          <a href="/yenice-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Yenice</a>
-          <a href="/ulus-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Ulus</a>
-          <a href="/eflani-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Eflani</a>
-          <a href="/ovacik-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Ovacık</a>
-          <a href="/alapli-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Alaplı</a>
-          <a href="/gokcebey-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Gökçebey</a>
+        <div class="footer-region-group">
+          <h5 class="footer-region-city">Karabük</h5>
+          <div class="grid grid-cols-2 gap-x-3 gap-y-1 mb-3">
+            <a href="/safranbolu-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Safranbolu</a>
+            <a href="/eflani-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Eflani</a>
+            <a href="/eskipazar-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Eskipazar</a>
+            <a href="/ovacik-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Ovacık</a>
+            <a href="/yenice-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Yenice</a>
+          </div>
+
+          <h5 class="footer-region-city">Bartın</h5>
+          <div class="grid grid-cols-2 gap-x-3 gap-y-1 mb-3">
+            <a href="/amasra-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Amasra</a>
+            <a href="/kurucasile-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Kurucaşile</a>
+            <a href="/ulus-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Ulus</a>
+          </div>
+
+          <h5 class="footer-region-city">Zonguldak</h5>
+          <div class="grid grid-cols-2 gap-x-3 gap-y-1">
+            <a href="/eregli-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Ereğli</a>
+            <a href="/devrek-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Devrek</a>
+            <a href="/caycuma-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Çaycuma</a>
+            <a href="/alapli-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Alaplı</a>
+            <a href="/gokcebey-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Gökçebey</a>
+            <a href="/kilimli-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Kilimli</a>
+            <a href="/kozlu-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-chevron-right"></i> Kozlu</a>
+          </div>
         </div>
       </div>
 
@@ -2127,6 +2400,34 @@
 <button id="scrollTop" class="scroll-top" aria-label="Yukarı Çık">
   <i class="fas fa-chevron-up"></i>
 </button>
+
+<!-- City Info Modal -->
+<div id="cityModalOverlay" class="city-modal-overlay"></div>
+<div id="cityModal" class="city-modal" role="dialog" aria-modal="true" aria-labelledby="cityModalTitle">
+  <div class="city-modal-header">
+    <button class="city-modal-close" id="cityModalClose" aria-label="Kapat">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="city-modal-icon"><i class="fas fa-map-marker-alt"></i></div>
+    <h3 class="city-modal-title" id="cityModalTitle"><span id="cityName">Bartın</span>'da Mobilya Ustası</h3>
+    <p class="city-modal-subtitle">15+ yıl tecrübeyle hizmetinizdeyiz</p>
+  </div>
+  <div class="city-modal-body">
+    <div class="city-modal-phone-label">Telefon Numaramız</div>
+    <a href="tel:05321783471" class="city-modal-phone">0532 178 34 71</a>
+    <div class="city-modal-actions">
+      <a href="tel:05321783471" class="city-modal-btn city-modal-btn-call">
+        <i class="fas fa-phone-alt"></i> Hemen Ara
+      </a>
+      <a href="https://wa.me/905321783471?text=Merhaba%2C%20" target="_blank" rel="noopener" class="city-modal-btn city-modal-btn-whatsapp" id="cityModalWhatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
+      </a>
+    </div>
+  </div>
+  <div class="city-modal-trust">
+    <i class="fas fa-shield-halved" style="color:#e10600"></i> <strong>Ücretsiz Keşif</strong> · 7/24 Hızlı Geri Dönüş
+  </div>
+</div>
 
 <!-- Floating Action Buttons -->
 <div class="float-actions">
@@ -2483,6 +2784,43 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // City Modal (İl rozet popup)
+  const cityModal = document.getElementById('cityModal');
+  const cityModalOverlay = document.getElementById('cityModalOverlay');
+  const cityModalClose = document.getElementById('cityModalClose');
+  const cityNameEl = document.getElementById('cityName');
+  const cityModalWhatsapp = document.getElementById('cityModalWhatsapp');
+
+  function openCityModal(cityName) {
+    cityNameEl.textContent = cityName;
+    // WhatsApp mesajını şehre göre kişiselleştir
+    const whatsappMsg = encodeURIComponent(`Merhaba, ${cityName}'da mobilya / dekorasyon hizmeti hakkında bilgi almak istiyorum.`);
+    cityModalWhatsapp.href = `https://wa.me/905321783471?text=${whatsappMsg}`;
+
+    cityModal.classList.add('active');
+    cityModalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCityModal() {
+    cityModal.classList.remove('active');
+    cityModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Tüm primary badge'lere tıklama event'i bağla
+  document.querySelectorAll('.keyword-badge-primary[data-city]').forEach(badge => {
+    badge.addEventListener('click', () => {
+      openCityModal(badge.dataset.city);
+    });
+  });
+
+  cityModalClose.addEventListener('click', closeCityModal);
+  cityModalOverlay.addEventListener('click', closeCityModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cityModal.classList.contains('active')) closeCityModal();
+  });
 </script>
 
 </body>
