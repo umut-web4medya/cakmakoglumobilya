@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- SEO META -->
-<title>Çakmakoğlu Mobilya | Bartın, Karabük, Zonguldak Mobilya & Dekorasyon</title>
-<meta name="description" content="Çakmakoğlu Mobilya; Bartın, Karabük ve Zonguldak'ta mutfak dolabı, yatak odası, banyo dolabı, TV ünitesi imalatı ve anahtar teslim iç dekorasyon hizmetleri sunar." />
-<meta name="keywords" content="Bartın mobilya dekorasyon, Karabük mobilya dekorasyon, Zonguldak mobilya dekorasyon, mutfak dolabı imalatı, banyo dolabı imalatı, yatak odası takımı, çocuk odası dekorasyonu, mobilya montaj hizmeti, iç dekorasyon hizmetleri" />
+<title>Bartın, Karabük, Zonguldak Mobilya & Dekorasyon | Çakmakoğlu Mobilya</title>
+<meta name="description" content="Bartın, Karabük, Zonguldak'ta mutfak dolabı imalatı, yatak odası takımı, banyo dolabı, mobilya ustası, mobilya tamiri ve anahtar teslim iç dekorasyon hizmetleri. Çakmakoğlu Mobilya ile profesyonel çözümler." />
+<meta name="keywords" content="Bartın mobilya dekorasyon, Bartın mobilya ustası, Bartın mobilya tamircisi, Karabük mobilya dekorasyon, Karabük mobilya ustası, Karabük mobilya tamircisi, Zonguldak mobilya dekorasyon, Zonguldak mobilya ustası, Zonguldak mobilya tamircisi, Safranbolu mobilya dekorasyon, Amasra mobilya dekorasyon, Ereğli mobilya dekorasyon, Devrek mobilya dekorasyon, mutfak dolabı imalatı, banyo dolabı imalatı, yatak odası takımı, çocuk odası dekorasyonu, genç odası, TV ünitesi, gardırop imalatı, mobilya montaj hizmeti, mobilya tamiri, mobilya boyama, kapı tamiri, çekmece tamiri, anahtar teslim dekorasyon, ev dekorasyonu, işyeri dekorasyonu, ofis dekorasyonu, mağaza dekorasyonu, akrilik mutfak dolabı, membran kapak, lake mutfak, hilton tezgah" />
 <meta name="author" content="Çakmakoğlu Mobilya" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.cakmakoglumobilya.com/" />
@@ -733,6 +733,191 @@
       radial-gradient(circle at 80% 70%, rgba(225,6,0,0.1) 0%, transparent 40%);
   }
 
+  /* Niş Keyword Cloud Section */
+  .keyword-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .keyword-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #fff;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    cursor: pointer;
+  }
+  .keyword-badge:hover {
+    background: #e10600;
+    color: #fff;
+    border-color: #e10600;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(225,6,0,0.3);
+  }
+  .keyword-badge i { color: #e10600; transition: color 0.3s ease; }
+  .keyword-badge:hover i { color: #fff; }
+  .keyword-badge-primary {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+    font-weight: 600;
+  }
+  .keyword-badge-primary i { color: #e10600; }
+
+  /* Region niche grid */
+  .niche-region {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid #eee;
+    border-top: 4px solid #e10600;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    height: 100%;
+  }
+  .niche-region:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+  }
+  .niche-region h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #000;
+  }
+  .niche-region .niche-subtitle {
+    color: #e10600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .niche-region ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+  }
+  .niche-region li {
+    color: #555;
+    font-size: 0.88rem;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .niche-region li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #e10600;
+    font-size: 10px;
+  }
+  @media (max-width: 480px) {
+    .niche-region ul { grid-template-columns: 1fr; }
+  }
+
+  /* FAQ accordion */
+  .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .faq-item.open {
+    border-color: #e10600;
+    box-shadow: 0 8px 25px rgba(225,6,0,0.1);
+  }
+  .faq-question {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+    color: #000;
+    transition: all 0.3s ease;
+    font-size: 1.02rem;
+  }
+  .faq-question:hover { background: #fafafa; }
+  .faq-item.open .faq-question { color: #e10600; background: #fafafa; }
+  .faq-question i {
+    color: #e10600;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-question i { transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .faq-answer-inner {
+    padding: 0 24px 22px;
+    color: #444;
+    line-height: 1.75;
+    font-size: 0.95rem;
+  }
+  .faq-item.open .faq-answer { max-height: 500px; }
+
+  /* Animated marquee */
+  .marquee-wrap {
+    overflow: hidden;
+    padding: 12px 0;
+    background: linear-gradient(90deg, #000 0%, #1a1a1a 100%);
+    border-top: 1px solid rgba(225,6,0,0.2);
+    border-bottom: 1px solid rgba(225,6,0,0.2);
+  }
+  .marquee {
+    display: flex;
+    gap: 40px;
+    white-space: nowrap;
+    animation: marquee 50s linear infinite;
+    width: max-content;
+  }
+  .marquee:hover { animation-play-state: paused; }
+  .marquee-item {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .marquee-item::after {
+    content: '◆';
+    color: #e10600;
+    font-size: 0.7rem;
+    margin-left: 40px;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Pulse fade-in for badges */
+  .keyword-badge {
+    opacity: 0;
+    animation: badge-fade-in 0.6s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
+  @keyframes badge-fade-in {
+    from { opacity: 0; transform: translateY(15px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
   /* Form / Contact */
   .contact-card {
     background: #fff;
@@ -902,10 +1087,10 @@
           <div class="max-w-4xl">
             <span class="inline-block bg-brand-red/90 text-white text-xs uppercase tracking-[4px] font-bold px-4 py-2 rounded-full mb-6" data-aos="fade-up">Premium Mobilya & Dekorasyon</span>
             <h1 class="hero-title text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-              Bartın, Karabük ve Zonguldak'ta <span>Profesyonel Mobilya & Dekorasyon</span> Hizmetleri
+              Bartın, Karabük ve Zonguldak <span>Mobilya Dekorasyon</span> Uzmanı
             </h1>
             <p class="text-white/90 text-lg md:text-xl mb-8 max-w-3xl" data-aos="fade-up" data-aos-delay="200">
-              Çakmakoğlu Mobilya; mutfak, banyo, salon ve tüm yaşam alanlarınız için modern, estetik ve kullanışlı çözümler sunar.
+              Mutfak dolabı imalatı, yatak odası takımı, banyo dolabı, çocuk odası, TV ünitesi ve anahtar teslim iç dekorasyon hizmetleri. Mobilya ustası, mobilya tamiri ve montaj çözümlerinde Batı Karadeniz'in güvenilir adresi.
             </p>
             <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="300">
               <a href="tel:05321783471" class="btn-primary btn-call"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
@@ -1000,6 +1185,206 @@
             <div class="text-3xl font-display font-bold">15+</div>
             <div class="text-xs uppercase tracking-wider">Yıl Tecrübe</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== NICHE SERVICE KEYWORDS ============== -->
+<section id="nis-hizmetler" class="py-20 md:py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center max-w-4xl mx-auto mb-12" data-aos="fade-up">
+      <span class="section-subtitle">Uzmanlık Alanlarımız</span>
+      <h2 class="section-title">Bartın, Karabük ve Zonguldak'ta <span class="text-brand-red">Geniş Hizmet Yelpazesi</span></h2>
+      <p class="text-gray-600 text-lg mt-4">Mobilya imalatından dekorasyona, mobilya ustası hizmetlerinden tamir & yenileme işlerine kadar bölgenizdeki tüm ihtiyaçlarınız için tek adres.</p>
+    </div>
+
+    <div class="keyword-cloud" data-aos="fade-up" data-aos-delay="100">
+      <span class="keyword-badge keyword-badge-primary" style="animation-delay:0.05s"><i class="fas fa-star"></i> Bartın Mobilya Dekorasyon</span>
+      <span class="keyword-badge keyword-badge-primary" style="animation-delay:0.10s"><i class="fas fa-star"></i> Karabük Mobilya Dekorasyon</span>
+      <span class="keyword-badge keyword-badge-primary" style="animation-delay:0.15s"><i class="fas fa-star"></i> Zonguldak Mobilya Dekorasyon</span>
+      <span class="keyword-badge" style="animation-delay:0.20s"><i class="fas fa-tools"></i> Mobilya Ustası</span>
+      <span class="keyword-badge" style="animation-delay:0.25s"><i class="fas fa-screwdriver-wrench"></i> Mobilya Tamircisi</span>
+      <span class="keyword-badge" style="animation-delay:0.30s"><i class="fas fa-utensils"></i> Mutfak Dolabı İmalatı</span>
+      <span class="keyword-badge" style="animation-delay:0.35s"><i class="fas fa-bath"></i> Banyo Dolabı</span>
+      <span class="keyword-badge" style="animation-delay:0.40s"><i class="fas fa-bed"></i> Yatak Odası Takımı</span>
+      <span class="keyword-badge" style="animation-delay:0.45s"><i class="fas fa-child"></i> Çocuk Odası Dekorasyonu</span>
+      <span class="keyword-badge" style="animation-delay:0.50s"><i class="fas fa-user-graduate"></i> Genç Odası Takımı</span>
+      <span class="keyword-badge" style="animation-delay:0.55s"><i class="fas fa-tv"></i> TV Ünitesi</span>
+      <span class="keyword-badge" style="animation-delay:0.60s"><i class="fas fa-door-closed"></i> Gardırop İmalatı</span>
+      <span class="keyword-badge" style="animation-delay:0.65s"><i class="fas fa-cube"></i> Vestiyer & Antre</span>
+      <span class="keyword-badge" style="animation-delay:0.70s"><i class="fas fa-paint-roller"></i> Mobilya Boyama</span>
+      <span class="keyword-badge" style="animation-delay:0.75s"><i class="fas fa-hammer"></i> Çekmece Tamiri</span>
+      <span class="keyword-badge" style="animation-delay:0.80s"><i class="fas fa-door-open"></i> Kapı Tamiri</span>
+      <span class="keyword-badge" style="animation-delay:0.85s"><i class="fas fa-key"></i> Anahtar Teslim Dekorasyon</span>
+      <span class="keyword-badge" style="animation-delay:0.90s"><i class="fas fa-home"></i> Ev Dekorasyonu</span>
+      <span class="keyword-badge" style="animation-delay:0.95s"><i class="fas fa-briefcase"></i> İşyeri Dekorasyonu</span>
+      <span class="keyword-badge" style="animation-delay:1.00s"><i class="fas fa-store"></i> Mağaza Dekorasyonu</span>
+      <span class="keyword-badge" style="animation-delay:1.05s"><i class="fas fa-trowel-bricks"></i> Tadilat ve Yenileme</span>
+      <span class="keyword-badge" style="animation-delay:1.10s"><i class="fas fa-gem"></i> Akrilik Mutfak Dolabı</span>
+      <span class="keyword-badge" style="animation-delay:1.15s"><i class="fas fa-layer-group"></i> Membran Kapak</span>
+      <span class="keyword-badge" style="animation-delay:1.20s"><i class="fas fa-square"></i> Lake Mutfak</span>
+      <span class="keyword-badge" style="animation-delay:1.25s"><i class="fas fa-couch"></i> Mobilya Montajı</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== KEYWORD MARQUEE ============== -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <span class="marquee-item">Bartın Mobilya Dekorasyon</span>
+    <span class="marquee-item">Karabük Mobilya Ustası</span>
+    <span class="marquee-item">Zonguldak Mutfak Dolabı</span>
+    <span class="marquee-item">Safranbolu Yatak Odası</span>
+    <span class="marquee-item">Amasra Banyo Dolabı</span>
+    <span class="marquee-item">Ereğli Mobilya Tamiri</span>
+    <span class="marquee-item">Devrek Anahtar Teslim Dekorasyon</span>
+    <span class="marquee-item">Eskipazar Mobilya Montajı</span>
+    <span class="marquee-item">Çaycuma TV Ünitesi</span>
+    <span class="marquee-item">Yenice Çocuk Odası</span>
+    <!-- Tekrar (loop için) -->
+    <span class="marquee-item">Bartın Mobilya Dekorasyon</span>
+    <span class="marquee-item">Karabük Mobilya Ustası</span>
+    <span class="marquee-item">Zonguldak Mutfak Dolabı</span>
+    <span class="marquee-item">Safranbolu Yatak Odası</span>
+    <span class="marquee-item">Amasra Banyo Dolabı</span>
+    <span class="marquee-item">Ereğli Mobilya Tamiri</span>
+    <span class="marquee-item">Devrek Anahtar Teslim Dekorasyon</span>
+    <span class="marquee-item">Eskipazar Mobilya Montajı</span>
+    <span class="marquee-item">Çaycuma TV Ünitesi</span>
+    <span class="marquee-item">Yenice Çocuk Odası</span>
+  </div>
+</div>
+
+<!-- ============== REGIONAL NICHE SERVICES ============== -->
+<section class="py-20 md:py-24 bg-brand-gray">
+  <div class="container mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+      <span class="section-subtitle">İl Bazlı Hizmetler</span>
+      <h2 class="section-title">Bölgenize <span class="text-brand-red">Özel Mobilya Hizmetleri</span></h2>
+      <p class="text-gray-600 text-lg mt-4">Bartın, Karabük ve Zonguldak başta olmak üzere bölgemizdeki ihtiyaç duyduğunuz her alanda profesyonel hizmet.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="niche-region" data-aos="fade-up" data-aos-delay="50">
+        <span class="niche-subtitle">Bartın Hizmetleri</span>
+        <h3>Bartın Mobilya Dekorasyon</h3>
+        <p class="text-gray-600 text-sm mb-4">Bartın merkez ve ilçelerinde uzman ekibimizle tüm mobilya ve dekorasyon ihtiyaçlarınıza cevap veriyoruz.</p>
+        <ul>
+          <li>Bartın mobilya ustası</li>
+          <li>Bartın mobilya tamircisi</li>
+          <li>Mutfak dolabı imalatı</li>
+          <li>Banyo dolabı</li>
+          <li>Yatak odası takımı</li>
+          <li>Çocuk odası</li>
+          <li>TV ünitesi</li>
+          <li>Gardırop imalatı</li>
+          <li>Mobilya montajı</li>
+          <li>Mobilya tamiri</li>
+          <li>Anahtar teslim dekorasyon</li>
+          <li>Ev tadilatı</li>
+        </ul>
+      </article>
+
+      <article class="niche-region" data-aos="fade-up" data-aos-delay="150">
+        <span class="niche-subtitle">Karabük Hizmetleri</span>
+        <h3>Karabük Mobilya Dekorasyon</h3>
+        <p class="text-gray-600 text-sm mb-4">Karabük merkez, Safranbolu, Eskipazar ve diğer ilçelerde estetik ve fonksiyonel mobilya çözümleri.</p>
+        <ul>
+          <li>Karabük mobilya ustası</li>
+          <li>Karabük mobilya tamircisi</li>
+          <li>Safranbolu mobilya</li>
+          <li>Mutfak dolabı imalatı</li>
+          <li>Akrilik mutfak</li>
+          <li>Membran kapak</li>
+          <li>Banyo dolabı</li>
+          <li>Yatak odası takımı</li>
+          <li>Genç odası</li>
+          <li>İşyeri dekorasyonu</li>
+          <li>Ofis mobilyası</li>
+          <li>Mağaza dekorasyonu</li>
+        </ul>
+      </article>
+
+      <article class="niche-region" data-aos="fade-up" data-aos-delay="250">
+        <span class="niche-subtitle">Zonguldak Hizmetleri</span>
+        <h3>Zonguldak Mobilya Dekorasyon</h3>
+        <p class="text-gray-600 text-sm mb-4">Zonguldak merkez, Ereğli, Devrek, Çaycuma ve tüm ilçelerde anahtar teslim mobilya ve dekorasyon hizmeti.</p>
+        <ul>
+          <li>Zonguldak mobilya ustası</li>
+          <li>Zonguldak mobilya tamircisi</li>
+          <li>Ereğli mobilya dekorasyon</li>
+          <li>Devrek mobilya</li>
+          <li>Mutfak dolabı imalatı</li>
+          <li>Lake mutfak</li>
+          <li>Banyo dolabı</li>
+          <li>Yatak odası takımı</li>
+          <li>Çocuk & genç odası</li>
+          <li>TV ünitesi & vestiyer</li>
+          <li>Mobilya boyama & cila</li>
+          <li>Çekmece & kapı tamiri</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICE REGIONS ============== -->
+<section id="bolgeler" class="py-20 md:py-28 bg-brand-gray">
+  <div class="container mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+      <span class="section-subtitle">Hizmet Bölgeleri</span>
+      <h2 class="section-title">Bölgenize <span class="text-brand-red">Özel Çözümler</span></h2>
+      <p class="text-gray-600 text-lg">Bartın, Karabük ve Zonguldak başta olmak üzere bölgemizdeki tüm ilçelere mobilya ve dekorasyon hizmeti sunuyoruz.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- KARABÜK -->
+      <div class="region-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-200">
+          <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center"><i class="fas fa-map-marked-alt"></i></div>
+          <h3 class="text-2xl font-display font-bold">Karabük</h3>
+        </div>
+        <p class="text-gray-600 text-sm mb-4">Karabük merkez ve tüm ilçelerinde profesyonel mobilya & dekorasyon hizmetleri.</p>
+        <div class="space-y-1">
+          <a href="/eflani-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Eflani Mobilya Dekorasyon</a>
+          <a href="/eskipazar-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Eskipazar Mobilya Dekorasyon</a>
+          <a href="/ovacik-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Ovacık Mobilya Dekorasyon</a>
+          <a href="/safranbolu-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Safranbolu Mobilya Dekorasyon</a>
+          <a href="/yenice-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Yenice Mobilya Dekorasyon</a>
+        </div>
+      </div>
+
+      <!-- BARTIN -->
+      <div class="region-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-200">
+          <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center"><i class="fas fa-map-marked-alt"></i></div>
+          <h3 class="text-2xl font-display font-bold">Bartın</h3>
+        </div>
+        <p class="text-gray-600 text-sm mb-4">Bartın merkez ve ilçelerinde anahtar teslim mobilya & dekorasyon çözümleri.</p>
+        <div class="space-y-1">
+          <a href="/amasra-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Amasra Mobilya Dekorasyon</a>
+          <a href="/kurucasile-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Kurucaşile Mobilya Dekorasyon</a>
+          <a href="/ulus-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Ulus Mobilya Dekorasyon</a>
+        </div>
+      </div>
+
+      <!-- ZONGULDAK -->
+      <div class="region-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-200">
+          <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center"><i class="fas fa-map-marked-alt"></i></div>
+          <h3 class="text-2xl font-display font-bold">Zonguldak</h3>
+        </div>
+        <p class="text-gray-600 text-sm mb-4">Zonguldak merkez ve tüm ilçelerinde mobilya imalatı ve iç dekorasyon.</p>
+        <div class="space-y-1">
+          <a href="/alapli-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Alaplı Mobilya Dekorasyon</a>
+          <a href="/caycuma-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Çaycuma Mobilya Dekorasyon</a>
+          <a href="/devrek-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Devrek Mobilya Dekorasyon</a>
+          <a href="/eregli-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Ereğli Mobilya Dekorasyon</a>
+          <a href="/gokcebey-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Gökçebey Mobilya Dekorasyon</a>
+          <a href="/kilimli-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Kilimli Mobilya Dekorasyon</a>
+          <a href="/kozlu-mobilya-dekorasyon/" class="region-link"><i class="fas fa-chevron-right"></i> Kozlu Mobilya Dekorasyon</a>
         </div>
       </div>
     </div>
@@ -1170,131 +1555,154 @@
   </div>
 </section>
 
-<!-- ============== SERVICE REGIONS ============== -->
-<section id="bolgeler" class="py-20 md:py-28 bg-brand-gray">
-  <div class="container mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
-      <span class="section-subtitle">Hizmet Bölgeleri</span>
-      <h2 class="section-title">Bölgenize <span class="text-brand-red">Özel Çözümler</span></h2>
-      <p class="text-gray-600 text-lg">Bartın, Karabük ve Zonguldak başta olmak üzere bölgemizdeki tüm ilçelere mobilya ve dekorasyon hizmeti sunuyoruz.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- KARABÜK -->
-      <div class="region-card" data-aos="fade-up" data-aos-delay="50">
-        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-200">
-          <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center"><i class="fas fa-map-marked-alt"></i></div>
-          <h3 class="text-2xl font-display font-bold">Karabük</h3>
-        </div>
-        <p class="text-gray-600 text-sm mb-4">Karabük merkez ve tüm ilçelerinde profesyonel mobilya & dekorasyon hizmetleri.</p>
-        <div class="space-y-1">
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Eflani Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Eskipazar Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Ovacık Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Safranbolu Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Yenice Mobilya Dekorasyon</a>
-        </div>
-      </div>
-
-      <!-- BARTIN -->
-      <div class="region-card" data-aos="fade-up" data-aos-delay="150">
-        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-200">
-          <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center"><i class="fas fa-map-marked-alt"></i></div>
-          <h3 class="text-2xl font-display font-bold">Bartın</h3>
-        </div>
-        <p class="text-gray-600 text-sm mb-4">Bartın merkez ve ilçelerinde anahtar teslim mobilya & dekorasyon çözümleri.</p>
-        <div class="space-y-1">
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Amasra Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Kurucaşile Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Ulus Mobilya Dekorasyon</a>
-        </div>
-      </div>
-
-      <!-- ZONGULDAK -->
-      <div class="region-card" data-aos="fade-up" data-aos-delay="250">
-        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-gray-200">
-          <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center"><i class="fas fa-map-marked-alt"></i></div>
-          <h3 class="text-2xl font-display font-bold">Zonguldak</h3>
-        </div>
-        <p class="text-gray-600 text-sm mb-4">Zonguldak merkez ve tüm ilçelerinde mobilya imalatı ve iç dekorasyon.</p>
-        <div class="space-y-1">
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Alaplı Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Çaycuma Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Devrek Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Ereğli Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Gökçebey Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Kilimli Mobilya Dekorasyon</a>
-          <a href="#iletisim" class="region-link"><i class="fas fa-chevron-right"></i> Kozlu Mobilya Dekorasyon</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============== SEO ARTICLE ============== -->
 <section class="py-20 md:py-28 bg-white">
   <div class="container mx-auto px-6 max-w-5xl">
     <div class="text-center mb-12" data-aos="fade-up">
       <span class="section-subtitle">Bilgi Merkezi</span>
-      <h2 class="section-title">Bartın'da <span class="text-brand-red">Mobilya İmalatı ve Dekorasyon</span> Hizmetleri</h2>
+      <h2 class="section-title">Bartın, Karabük, Zonguldak <span class="text-brand-red">Mobilya & Dekorasyon</span> Rehberi</h2>
+      <p class="text-gray-600 text-lg mt-4">Mobilya imalatı, mobilya ustası, dekorasyon ve montaj hizmetleri hakkında bilmeniz gereken her şey.</p>
     </div>
 
     <article class="article-content prose-lg max-w-none" data-aos="fade-up" data-aos-delay="100">
       <p>
-        <strong>Bartın merkez</strong> ve çevre ilçelerde yaşayan müşterilerimize özel olarak hazırladığımız mobilya imalat ve iç dekorasyon hizmetleri, modern yaşamın gerektirdiği konfor, estetik ve fonksiyonelliği bir araya getiriyor. <strong>Çakmakoğlu Mobilya</strong> olarak, mutfak dolabı imalatından yatak odası takımı tasarımına, banyo dolabı üretiminden çocuk odası dekorasyonuna kadar çok geniş bir hizmet yelpazesinde uzun yıllara dayanan tecrübemizle hizmet veriyoruz.
+        <strong>Bartın mobilya dekorasyon</strong>, <strong>Karabük mobilya dekorasyon</strong> ve <strong>Zonguldak mobilya dekorasyon</strong> hizmetleri konusunda Batı Karadeniz Bölgesi'nin köklü firmalarından biri olan Çakmakoğlu Mobilya, 15 yılı aşkın tecrübesiyle mutfak dolabı imalatından yatak odası takımına, banyo dolabından çocuk odası tasarımına, mobilya ustası hizmetinden mobilya tamirine kadar geniş bir yelpazede çözüm sunuyor. Ev dekorasyonu, işyeri dekorasyonu, mağaza dekorasyonu ve anahtar teslim tadilat işleriyle birlikte; bölgemizde mobilya & dekorasyon ihtiyacı duyan herkesin güvenilir adresi konumundayız.
       </p>
 
-      <h3>Mutfak Dolabı İmalatı: Mutfaklarınızda Yeni Bir Dönem</h3>
+      <h3>Bartın Mobilya Dekorasyon: Şehrin Estetik Dokusuna Uygun Çözümler</h3>
       <p>
-        Modern bir evin kalbi mutfaktır. <strong>Mutfak dolabı imalatı</strong> alanında <strong>Bartın mobilya dekorasyon</strong> sektörünün en titiz uygulamacılarından biri olarak, her projeyi müşterimizin yaşam alışkanlıklarına ve mutfak ölçülerine göre özel olarak planlıyoruz. Akrilik, lake, membran ve PVC kapak seçenekleriyle hem klasik hem modern tarzları kolaylıkla yakalayabiliyoruz. Hilton tezgah, Corian, kompakt lamine ve granit tezgah seçenekleriyle birleşen kaliteli kapaklar; mutfağınıza yıllarca dayanacak bir kullanım kolaylığı sunuyor.
+        <strong>Bartın merkez</strong> ve ilçelerinde yıllardır faaliyet gösteren <strong>Bartın mobilya ustası</strong> kadromuz; modern apartman dairelerinden tarihi yapılara, sahil evlerinden iş yerlerine kadar her tipteki mekana özel mobilya çözümleri üretmektedir. <strong>Bartın mobilya tamircisi</strong> hizmetiyle eski mobilyalarınıza yeniden hayat verir; çekmece tamiri, kapı tamiri, menteşe değişimi, mobilya boyama ve cila gibi işlerle bütçe dostu yenileme imkanı sunarız. <strong>Amasra mobilya dekorasyon</strong>, <strong>Kurucaşile mobilya dekorasyon</strong> ve <strong>Ulus mobilya dekorasyon</strong> bölgelerinde de aktif hizmet veren ekibimiz, deniz nemine dayanıklı malzeme seçenekleriyle sahil bölgelerinin özel ihtiyaçlarına özel çözümler geliştirmektedir.
+      </p>
+
+      <h3>Karabük Mobilya Dekorasyon: Geleneksel ve Modern Tasarımın Buluştuğu Nokta</h3>
+      <p>
+        <strong>Karabük mobilya dekorasyon</strong> sektöründe, <strong>Karabük mobilya ustası</strong> ve <strong>Karabük mobilya tamircisi</strong> olarak hem klasik Anadolu motiflerini koruyan hem de çağdaş çizgileri yakalayan tasarımlar üretiyoruz. UNESCO Dünya Mirası listesindeki <strong>Safranbolu mobilya dekorasyon</strong> projelerinde özellikle ahşap işlemeciliği, oyma detaylar ve geleneksel renk paletini ön plana çıkararak şehrin tarihi dokusuyla uyumlu mekanlar yaratıyoruz. <strong>Eflani mobilya dekorasyon</strong>, <strong>Eskipazar mobilya dekorasyon</strong>, <strong>Ovacık mobilya dekorasyon</strong> ve <strong>Yenice mobilya dekorasyon</strong> bölgelerinde de modern apartman daireleri ve müstakil evler için profesyonel hizmet veriyoruz. Karabük'ün öğrenci nüfusunun yoğun olduğu mahallelerde özellikle <strong>genç odası takımı</strong> ve <strong>çocuk odası dekorasyonu</strong> talebi yüksek olup, bu alanda iddialı ve kullanışlı çözümler sunuyoruz.
+      </p>
+
+      <h3>Zonguldak Mobilya Dekorasyon: Kömür Şehri'nin Modern Yaşam Alanları</h3>
+      <p>
+        <strong>Zonguldak mobilya dekorasyon</strong>, <strong>Zonguldak mobilya ustası</strong> ve <strong>Zonguldak mobilya tamircisi</strong> hizmetlerimizle bölgenin sanayi ve liman kenti dinamiklerine uygun pratik, dayanıklı ve estetik mobilya çözümleri sunuyoruz. <strong>Ereğli mobilya dekorasyon</strong> alanında özellikle endüstriyel ve modern tarzı tercih eden müşterilerimize loft konseptli iç mekan tasarımları üretiyor, <strong>Devrek mobilya dekorasyon</strong> hizmetlerimizde geleneksel ve sıcak ev konseptleri ön plana çıkıyor. <strong>Çaycuma mobilya dekorasyon</strong>, <strong>Alaplı mobilya dekorasyon</strong>, <strong>Gökçebey mobilya dekorasyon</strong>, <strong>Kilimli mobilya dekorasyon</strong> ve <strong>Kozlu mobilya dekorasyon</strong> bölgelerinde apartman daireleri için modüler çözümler, müstakil evler için ise full kapsamlı dekorasyon hizmetleri vermekteyiz.
+      </p>
+
+      <h3>Mutfak Dolabı İmalatı: Mutfaklarınızda Kalite ve Estetik</h3>
+      <p>
+        Modern bir evin kalbi mutfaktır. <strong>Mutfak dolabı imalatı</strong> alanında her projeyi müşterimizin yaşam alışkanlıklarına ve mutfak ölçülerine göre özel olarak planlıyoruz. <strong>Akrilik mutfak dolabı</strong>, <strong>lake mutfak</strong>, <strong>membran kapak</strong> ve <strong>PVC kapak</strong> seçenekleriyle hem klasik hem modern tarzları kolaylıkla yakalayabiliyoruz. Hilton tezgah, Corian, kompakt lamine ve granit tezgah seçenekleriyle birleşen kaliteli kapaklar; mutfağınıza yıllarca dayanacak bir kullanım kolaylığı sunuyor.
       </p>
       <p>
-        Mutfak dolabı planlamasında ergonomi büyük önem taşır. Çekmece sistemleri, çöp modülleri, içine entegre çöp kovaları, baharatlık üniteleri, döner sepetler ve push-open frenli kapak mekanizmaları sayesinde mutfak kullanımı çok daha keyifli hale gelir. Çakmakoğlu olarak Hettich, Blum gibi global markaların aksesuarlarını öneriyor; uzun ömürlü ve sessiz çalışan donanımlarla projeyi tamamlıyoruz.
+        Mutfak dolabı planlamasında ergonomi büyük önem taşır. Çekmece sistemleri, çöp modülleri, baharatlık üniteleri, döner sepetler ve push-open frenli kapak mekanizmaları sayesinde mutfak kullanımı çok daha keyifli hale gelir. Hettich, Blum gibi global markaların aksesuarlarını öneriyor; uzun ömürlü ve sessiz çalışan donanımlarla projeyi tamamlıyoruz. <strong>Bartın mutfak dolabı</strong>, <strong>Karabük mutfak dolabı</strong> ve <strong>Zonguldak mutfak dolabı</strong> talep eden müşterilerimize ücretsiz keşif, ölçü alma ve 3D tasarım hizmeti veriyoruz.
       </p>
 
       <h3>Yatak Odası Takımı İmalatı: Konforun ve Estetiğin Buluştuğu Alan</h3>
       <p>
-        Yatak odası, evin en kişisel ve dinlendirici bölümüdür. <strong>Yatak odası takımı imalatı</strong> hizmetimizde, gardırop ölçülerini odanın metrekaresine en verimli şekilde yerleştirecek biçimde planlıyoruz. Sürgülü kapak gardıroplar küçük odalarda inanılmaz alan kazanımı sağlarken, klasik menteşeli kapaklar daha geniş yatak odalarına ihtişam katıyor. Komodin, makyaj masası, şifoniyer ve karyola tasarımlarımız tek bir bütünlük içinde planlandığı için odanın atmosferi özenle korunuyor.
+        Yatak odası, evin en kişisel ve dinlendirici bölümüdür. <strong>Yatak odası takımı imalatı</strong> hizmetimizde, <strong>gardırop imalatı</strong> ölçülerini odanın metrekaresine en verimli şekilde yerleştirecek biçimde planlıyoruz. Sürgülü kapak gardıroplar küçük odalarda inanılmaz alan kazanımı sağlarken, klasik menteşeli kapaklar daha geniş yatak odalarına ihtişam katıyor. Komodin, makyaj masası, şifoniyer ve karyola tasarımlarımız tek bir bütünlük içinde planlandığı için odanın atmosferi özenle korunuyor.
       </p>
       <p>
-        Modern yatak odası takımlarında trend olan ahşap dokuların, mat lake yüzeylerle birleştirilmesi son derece şık sonuçlar veriyor. Çakmakoğlu Mobilya olarak, müşterilerimize geniş renk ve doku seçenekleri sunarak kişisel zevklerine hitap eden tasarımlar üretiyoruz. Aynı şekilde başlık tasarımları, gizli ışıklandırma sistemleri ve özel bölmeli gardıroplarla yatak odasının fonksiyonelliğini artırıyoruz.
+        Modern yatak odası takımlarında trend olan ahşap dokuların, mat lake yüzeylerle birleştirilmesi son derece şık sonuçlar veriyor. Müşterilerimize geniş renk ve doku seçenekleri sunarak kişisel zevklerine hitap eden tasarımlar üretiyoruz. Aynı şekilde başlık tasarımları, gizli ışıklandırma sistemleri ve özel bölmeli gardıroplarla yatak odasının fonksiyonelliğini artırıyoruz. <strong>Vestiyer</strong>, <strong>antre dolabı</strong> ve <strong>karyola altı çekmeceli depolama</strong> çözümleriyle her metrekareyi değerlendiriyoruz.
       </p>
 
       <h3>Banyo Dolabı İmalatı: Suya Dayanıklı, Estetik Çözümler</h3>
       <p>
-        Banyolar nemli ortamlar olduğu için banyo dolabı seçimi çok kritiktir. <strong>Banyo dolabı imalatı</strong> hizmetimizde MDF lake ve high-gloss yüzeylerin yanında, polimer kaplı suya dayanıklı modüller kullanıyoruz. Lavabo altı dolaplar, aynalı üst kabinler, kolon dolapları ve gizli depolama çözümleri ile küçük banyolarda bile büyük bir kullanım rahatlığı yaratabiliyoruz.
+        Banyolar nemli ortamlar olduğu için <strong>banyo dolabı imalatı</strong> seçimi çok kritiktir. MDF lake ve high-gloss yüzeylerin yanında, polimer kaplı suya dayanıklı modüller kullanıyoruz. Lavabo altı dolaplar, aynalı üst kabinler, kolon dolapları ve gizli depolama çözümleri ile küçük banyolarda bile büyük bir kullanım rahatlığı yaratabiliyoruz. <strong>LED aydınlatmalı ayna kabinler</strong>, <strong>çamaşır makinesi entegre dolaplar</strong> ve <strong>tezgah üstü makyaj alanları</strong> banyolarınıza ferahlık ve fonksiyonellik katıyor.
       </p>
 
-      <h3>Çocuk ve Genç Odası Dekorasyonu</h3>
+      <h3>Çocuk ve Genç Odası Dekorasyonu: Geleceğin Tasarımı</h3>
       <p>
-        Çocukların gelişiminde mekan tasarımının rolü büyüktür. <strong>Çocuk odası imalatı</strong> ve <strong>genç odası takımı imalatı</strong> projelerinde renk seçimi, ergonomi ve güvenlik bizim için ön plandadır. Yuvarlatılmış köşeler, frenli çekmece sistemleri ve düşmeye karşı dengeli karyolalar tercih ediyoruz. Ranza modelleri, çalışma masaları, kitaplıklar ve hobi köşeleri ile çocuğunuzun her ihtiyacına uygun bir alan tasarlıyoruz. Genç odası tasarımlarımızda ise çağdaş ve dinamik tarzı tercih eden gençler için gri-beyaz kombinasyonlar, ahşap dokuyla birleşen mat yüzeyler ve modüler depolama çözümleri öne çıkıyor.
+        Çocukların gelişiminde mekan tasarımının rolü büyüktür. <strong>Çocuk odası imalatı</strong> ve <strong>genç odası takımı imalatı</strong> projelerinde renk seçimi, ergonomi ve güvenlik bizim için ön plandadır. Yuvarlatılmış köşeler, frenli çekmece sistemleri ve düşmeye karşı dengeli karyolalar tercih ediyoruz. Ranza modelleri, çalışma masaları, kitaplıklar ve hobi köşeleri ile çocuğunuzun her ihtiyacına uygun bir alan tasarlıyoruz. <strong>Genç odası tasarımı</strong>nda ise çağdaş ve dinamik tarzı tercih eden gençler için gri-beyaz kombinasyonlar, ahşap dokuyla birleşen mat yüzeyler ve modüler depolama çözümleri öne çıkıyor. Üniversite öğrencilerinin yoğun olduğu Karabük ve Zonguldak gibi şehirlerde özellikle <strong>tek kişilik öğrenci odası</strong> ve <strong>çalışma odası</strong> taleplerine yönelik kompakt çözümler üretiyoruz.
       </p>
 
-      <h3>Ev Dekorasyon Hizmeti: Anahtar Teslim Çözümler</h3>
+      <h3>TV Ünitesi ve Salon Mobilyası: Yaşam Alanlarınızın Odak Noktası</h3>
       <p>
-        <strong>Ev dekorasyon hizmeti</strong> kapsamında, evinizin tüm odalarını bir bütün olarak ele alıyoruz. Salon dekorasyonu, mutfak yenileme, banyo tadilatı, yatak odası düzenlemesi gibi tüm hizmetleri tek elden sunarak hem zamandan hem maliyetten tasarruf etmenizi sağlıyoruz. Konsept tasarım, renk paleti, mobilya seçimi, aydınlatma ve aksesuar uyumu gibi konularda profesyonel danışmanlık hizmeti veriyoruz.
+        Salonun en dikkat çekici unsuru olan <strong>TV ünitesi</strong>, dekorasyonun bütününe ton veren önemli bir parçadır. Modern duvar üniteleri, gizli kablolama sistemleri, LED arka aydınlatma ve dekoratif raf tasarımlarıyla televizyon ünitelerini sadece bir mobilya değil, salonun gözdesi haline getiriyoruz. Mermer dokulu yüzeyler, ahşap kontrastı ve metal aksesuarlarla zenginleştirilen TV ünitesi tasarımlarımız hem klasik hem modern dekorasyonlara uyum sağlamaktadır. Yan ünite, vitrin, koltuk takımı ve sehpalarla bütünleştirdiğimiz salon dekorasyonu projelerinde tek tarz, tek ruh anlayışıyla çalışıyoruz.
       </p>
 
-      <h3>Mobilya Tasarım Hizmeti: Size Özel Çözümler</h3>
+      <h3>Ev Dekorasyonu: Anahtar Teslim Çözümler</h3>
       <p>
-        Hazır mobilya satın almak yerine kendi yaşam alanınıza özel tasarımlar tercih etmek, hem estetik hem fonksiyonel açıdan büyük avantajlar sağlar. <strong>Mobilya tasarım hizmeti</strong> ile evinizin metrekaresini en verimli şekilde değerlendirmenizi, tarz ve renk açısından kişisel beğenilerinizi ön plana çıkarmanızı sağlıyoruz. 3D görselleştirme imkanlarımızla, mobilyanız üretilmeden önce nasıl görüneceğini birlikte değerlendiriyoruz.
+        <strong>Ev dekorasyonu</strong> kapsamında, evinizin tüm odalarını bir bütün olarak ele alıyoruz. Salon dekorasyonu, mutfak yenileme, banyo tadilatı, yatak odası düzenlemesi gibi tüm hizmetleri tek elden sunarak hem zamandan hem maliyetten tasarruf etmenizi sağlıyoruz. Konsept tasarım, renk paleti, mobilya seçimi, aydınlatma ve aksesuar uyumu gibi konularda profesyonel danışmanlık hizmeti veriyoruz. <strong>Anahtar teslim dekorasyon</strong> projelerimizde keşiften teslime kadar tüm süreci ekibimiz yönetiyor; siz sadece beğendiğiniz tarzı seçiyor, gerisini bize bırakıyorsunuz.
       </p>
 
-      <h3>Mobilya Montaj Hizmetleri: Profesyonel Kurulum</h3>
+      <h3>İşyeri ve Mağaza Dekorasyonu: Markanıza Değer Katan Tasarımlar</h3>
       <p>
-        <strong>Mobilya montaj hizmeti</strong> alanında alanında uzman ekibimizle hızlı, hasarsız ve titiz kurulum yapıyoruz. Sadece kendi imalatlarımızı değil, hazır mobilya alımlarınızda da kurulum desteği sunuyoruz. Ölçü alma, demontaj, taşıma, kurulum ve son kontrol aşamalarının tamamı profesyonel ekibimiz tarafından titizlikle yürütülüyor.
+        <strong>İşyeri dekorasyonu</strong>, <strong>ofis dekorasyonu</strong> ve <strong>mağaza dekorasyonu</strong> projelerinde markanızın kimliğini ön plana çıkaran, müşterilerinize konfor ve güven hissi veren mekanlar yaratıyoruz. Mağaza vitrini, raf sistemleri, kasa üniteleri, deneme kabinleri ve müşteri oturma alanları gibi mağazanın her köşesini bütünsel bir konsept içinde ele alıyoruz. Ofislerde ise modüler çalışma masaları, dosyalama dolapları, toplantı masaları, bekleme salonu mobilyaları ve marka renkleriyle uyumlu duvar uygulamaları yapıyoruz. <strong>Restoran dekorasyonu</strong>, <strong>kafe dekorasyonu</strong>, <strong>kuaför dekorasyonu</strong> ve <strong>güzellik salonu dekorasyonu</strong> gibi sektörlere özel projelerde de uzman ekibimizle hizmet vermekteyiz.
       </p>
 
-      <h3>Karabük, Bartın ve Zonguldak'ta Bölgesel Hizmet Anlayışı</h3>
+      <h3>Mobilya Tamiri ve Yenileme: Eski Mobilyalara Yeni Hayat</h3>
       <p>
-        <strong>Bartın mobilya dekorasyon</strong>, <strong>Karabük mobilya dekorasyon</strong> ve <strong>Zonguldak mobilya dekorasyon</strong> hizmetlerimizle Batı Karadeniz Bölgesi'nin önde gelen firmalarından biriyiz. Safranbolu'nun tarihi dokusuna uygun klasik tasarımlar, Amasra'nın deniz manzaralı evlerinde kullanılan ferah konseptler, Karabük'ün modern apartmanlarında öne çıkan minimal stiller ve Zonguldak Ereğli'nin endüstriyel kareterli mekanları için çağdaş çözümler üretiyoruz. Bölgemizdeki her ilçenin yapı ve yaşam kültürüne uygun tasarım anlayışımızla, müşterilerimize sadece mobilya değil; bir yaşam tarzı sunuyoruz.
+        Eski ama duygusal değeri olan mobilyalarınızı atmaktansa yenilemek hem ekonomik hem de sürdürülebilir bir tercih. <strong>Mobilya tamiri</strong>, <strong>mobilya boyama</strong>, cila yenileme, kapı değişimi, çekmece tamiri, menteşe değişimi, kulp değişimi ve döşeme yenileme hizmetlerimizle eski mobilyalarınızı yepyeni bir görünüme kavuşturuyoruz. <strong>Bartın mobilya tamircisi</strong>, <strong>Karabük mobilya tamircisi</strong> ve <strong>Zonguldak mobilya tamircisi</strong> hizmetlerimizle bölgemizdeki tüm müşterilerimize hızlı ve uygun fiyatlı çözümler sunuyoruz. Antika mobilyaların restorasyonunda da ahşap işçiliği konusunda deneyimli ustalarımızla titiz çalışıyoruz.
+      </p>
+
+      <h3>Mobilya Montajı: Profesyonel Kurulum Hizmeti</h3>
+      <p>
+        <strong>Mobilya montaj hizmeti</strong> alanında uzman ekibimizle hızlı, hasarsız ve titiz kurulum yapıyoruz. Sadece kendi imalatlarımızı değil, <strong>hazır mobilya montajı</strong>, <strong>IKEA montajı</strong>, online satın aldığınız parça mobilyaların kurulumu gibi durumlarda da destek sunuyoruz. Ölçü alma, demontaj, taşıma, kurulum ve son kontrol aşamalarının tamamı profesyonel ekibimiz tarafından titizlikle yürütülüyor. Taşınma sırasında mobilyanızın sökümünü ve yeni evinizde tekrar kurulumunu yapıyoruz; bu sayede taşıma süresince hasar riskini minimuma indiriyoruz.
+      </p>
+
+      <h3>Tadilat ve Yenileme: Evinize Yepyeni Bir Soluk</h3>
+      <p>
+        <strong>Tadilat ve yenileme</strong> hizmetlerimiz, sadece mobilyayla sınırlı kalmıyor. Boyama, kartonpiyer, asma tavan, alçıpan duvar, parke uygulaması, fayans, ısı yalıtımı ve elektrik & sıhhi tesisat işlerinde de tek elden çözüm sunuyoruz. Eski evlerin modernleştirilmesi, mutfak ve banyo komple yenilemeleri, balkonun kış bahçesine dönüştürülmesi gibi kapsamlı projeleri hızlı ve kaliteli şekilde tamamlıyoruz.
+      </p>
+
+      <h3>Mobilya Tasarım Hizmeti: Size Özel 3D Çözümler</h3>
+      <p>
+        Hazır mobilya satın almak yerine kendi yaşam alanınıza özel tasarımlar tercih etmek, hem estetik hem fonksiyonel açıdan büyük avantajlar sağlar. <strong>Mobilya tasarım hizmeti</strong> ile evinizin metrekaresini en verimli şekilde değerlendirmenizi, tarz ve renk açısından kişisel beğenilerinizi ön plana çıkarmanızı sağlıyoruz. <strong>3D görselleştirme</strong> imkanlarımızla, mobilyanız üretilmeden önce nasıl görüneceğini birlikte değerlendiriyoruz. Beğenmediğiniz noktaları üretim öncesinde değiştirmek, malzeme alternatifleri arasında karşılaştırma yapmak ve final görüntüyü onaylamak elinizde olur.
       </p>
 
       <h3>Neden Çakmakoğlu Mobilya?</h3>
       <p>
-        15 yılı aşkın süredir bölgemizde sürdürdüğümüz hizmet anlayışımız; kalite, güven ve müşteri memnuniyeti üzerine kurulu. Tamamlanan binlerce projemizde aynı titizliği, aynı işçilik kalitesini ve aynı estetik anlayışını koruyoruz. Müşterilerimizin tavsiyesi ile büyüyen yapımız, bölgemizdeki en güvenilir mobilya markalarından biri olmamızı sağladı. Siz de evinize ya da işyerinize değer katmak istiyorsanız, profesyonel ekibimizle iletişime geçebilirsiniz. Ücretsiz keşif, detaylı fiyat teklifi ve 3D tasarım sunumu sizi bekliyor.
+        15 yılı aşkın süredir bölgemizde sürdürdüğümüz hizmet anlayışımız; kalite, güven ve müşteri memnuniyeti üzerine kurulu. Tamamlanan binlerce projemizde aynı titizliği, aynı işçilik kalitesini ve aynı estetik anlayışını koruyoruz. Müşterilerimizin tavsiyesi ile büyüyen yapımız, bölgemizdeki en güvenilir mobilya markalarından biri olmamızı sağladı. <strong>Bartın mobilya dekorasyon</strong>, <strong>Karabük mobilya dekorasyon</strong> ve <strong>Zonguldak mobilya dekorasyon</strong> alanında kalite arıyorsanız, ücretsiz keşif ve fiyat teklifi için profesyonel ekibimizle iletişime geçebilirsiniz. WhatsApp üzerinden de hızlı yanıt alabilir, gerçek müşteri referanslarımızı Instagram sayfamızdan inceleyebilirsiniz.
       </p>
     </article>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="py-20 md:py-24 bg-brand-gray">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+      <span class="section-subtitle">Sık Sorulan Sorular</span>
+      <h2 class="section-title">Mobilya & Dekorasyon Hakkında <span class="text-brand-red">Merak Edilenler</span></h2>
+      <p class="text-gray-600 text-lg mt-4">Müşterilerimizden en çok aldığımız soruları sizin için derledik.</p>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="100">
+      <div class="faq-item">
+        <div class="faq-question"><span>Bartın, Karabük ve Zonguldak'ta mobilya dekorasyon hizmeti veriyor musunuz?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Evet, Bartın merkez ve tüm ilçeleri (Amasra, Kurucaşile, Ulus), Karabük merkez ve ilçeleri (Safranbolu, Eflani, Eskipazar, Ovacık, Yenice), Zonguldak merkez ve ilçeleri (Ereğli, Devrek, Çaycuma, Alaplı, Gökçebey, Kilimli, Kozlu) dahil olmak üzere Batı Karadeniz Bölgesi'nin tamamında mobilya dekorasyon, mutfak dolabı imalatı, yatak odası takımı, banyo dolabı, mobilya ustası ve mobilya tamiri hizmetleri veriyoruz.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>Mutfak dolabı imalatı için keşif ve fiyat teklifi ücretli mi?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Hayır, mutfak dolabı imalatı, banyo dolabı, yatak odası takımı ve diğer tüm mobilya & dekorasyon projelerinde keşif, ölçü alma ve ön fiyat teklifi tamamen ücretsizdir. Talebinizi 0532 178 34 71 numarasından bize ileterek randevu oluşturabilirsiniz.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>Akrilik, lake ve membran kapak arasındaki fark nedir?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Akrilik kapaklar parlak ve modern bir görünüm sunar, çiziklere karşı dayanıklıdır. Lake kapaklar mat veya parlak finishli olup hem klasik hem modern dekorasyonlara uyum sağlar. Membran kapaklar uygun fiyatlı, dayanıklı ve geniş renk seçeneklerine sahiptir. Hangi seçeneğin sizin mutfağınıza uygun olduğunu, kullanım alışkanlıklarınızı ve bütçenizi göz önünde bulundurarak ücretsiz danışmanlıkla belirliyoruz.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>Mobilya tamiri ve mobilya ustası hizmetinde hangi işleri yapıyorsunuz?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Mobilya ustası hizmetlerimiz kapsamında çekmece tamiri, kapı tamiri, menteşe değişimi, kulp değişimi, mobilya boyama, cila yenileme, dolap arkası ve yan duvar tamiri, mutfak dolabı yenileme, eski yatak odası tadilatı, antika mobilya restorasyonu ve döşeme değişimi gibi pek çok işi gerçekleştiriyoruz.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>Anahtar teslim ev dekorasyonunda neler dahil?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Anahtar teslim dekorasyonda 3D tasarım, malzeme seçimi, mobilya imalatı, boya & badana, parke uygulaması, fayans, alçıpan, asma tavan, aydınlatma, mobilya montajı ve son temizlik hizmetlerinin tamamı dahildir. Kapsamı ve fiyatı projenize göre ücretsiz keşif sonrası netleştiriyoruz.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>Çocuk odası ve genç odası takımları kaç yaş aralığına uygun?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Çocuk odası takımlarımız 3-12 yaş arası çocuklar için, genç odası takımlarımız ise 13-22 yaş arası gençler ve üniversite öğrencileri için tasarlanmaktadır. Yuvarlatılmış köşeler, güvenlik standartları, ergonomik çalışma masaları ve ihtiyaca göre ranza/tek kişilik karyola seçenekleri sunuyoruz.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>İşyeri ve mağaza dekorasyonunda ne kadar sürede teslim ediyorsunuz?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">İşyeri dekorasyonu, ofis dekorasyonu ve mağaza dekorasyonu projelerinin teslim süresi, mekanın metrekaresi ve uygulamanın kapsamına göre 7-30 gün arasında değişir. Acil ihtiyaçlarda öncelikli üretim hattımızla daha hızlı teslimler de mümkündür.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question"><span>Garantili hizmet veriyor musunuz?</span><i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Evet, ürettiğimiz tüm mutfak dolapları, yatak odası takımları, banyo dolapları ve diğer özel imalat mobilyalar 2 yıl üretim ve işçilik garantisi kapsamındadır. Mobilya tamiri ve montaj hizmetlerimizde de yapılan iş özelinde garanti sunmaktayız.</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1423,12 +1831,14 @@
       <div>
         <h3 class="text-lg font-display font-bold mb-5 relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-[3px] after:bg-brand-red">Hizmet Bölgeleri</h3>
         <ul class="space-y-2">
-          <li><a href="#bolgeler" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Bartın Mobilya Dekorasyon</a></li>
-          <li><a href="#bolgeler" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Karabük Mobilya Dekorasyon</a></li>
-          <li><a href="#bolgeler" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Zonguldak Mobilya Dekorasyon</a></li>
-          <li><a href="#bolgeler" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Safranbolu Dekorasyon</a></li>
-          <li><a href="#bolgeler" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Amasra Dekorasyon</a></li>
-          <li><a href="#bolgeler" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Ereğli Dekorasyon</a></li>
+          <li><a href="/safranbolu-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Safranbolu Mobilya Dekorasyon</a></li>
+          <li><a href="/eskipazar-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Eskipazar Mobilya Dekorasyon</a></li>
+          <li><a href="/yenice-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Yenice Mobilya Dekorasyon</a></li>
+          <li><a href="/amasra-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Amasra Mobilya Dekorasyon</a></li>
+          <li><a href="/ulus-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Ulus Mobilya Dekorasyon</a></li>
+          <li><a href="/eregli-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Ereğli Mobilya Dekorasyon</a></li>
+          <li><a href="/devrek-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Devrek Mobilya Dekorasyon</a></li>
+          <li><a href="/caycuma-mobilya-dekorasyon/" class="footer-link"><i class="fas fa-map-marker-alt text-xs"></i> Çaycuma Mobilya Dekorasyon</a></li>
         </ul>
       </div>
 
@@ -1484,7 +1894,7 @@
   "url": "https://www.cakmakoglumobilya.com",
   "telephone": "+905321783471",
   "priceRange": "₺₺",
-  "description": "Bartın, Karabük ve Zonguldak'ta profesyonel mobilya imalatı, montaj ve anahtar teslim iç dekorasyon hizmetleri.",
+  "description": "Bartın, Karabük ve Zonguldak'ta profesyonel mobilya imalatı, mobilya ustası, mobilya tamiri, mutfak dolabı, yatak odası takımı, banyo dolabı, çocuk odası ve anahtar teslim iç dekorasyon hizmetleri.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Bartın",
@@ -1493,11 +1903,23 @@
   },
   "areaServed": [
     { "@type": "City", "name": "Bartın" },
-    { "@type": "City", "name": "Karabük" },
-    { "@type": "City", "name": "Zonguldak" },
-    { "@type": "City", "name": "Safranbolu" },
     { "@type": "City", "name": "Amasra" },
-    { "@type": "City", "name": "Ereğli" }
+    { "@type": "City", "name": "Kurucaşile" },
+    { "@type": "City", "name": "Ulus" },
+    { "@type": "City", "name": "Karabük" },
+    { "@type": "City", "name": "Safranbolu" },
+    { "@type": "City", "name": "Eflani" },
+    { "@type": "City", "name": "Eskipazar" },
+    { "@type": "City", "name": "Ovacık" },
+    { "@type": "City", "name": "Yenice" },
+    { "@type": "City", "name": "Zonguldak" },
+    { "@type": "City", "name": "Ereğli" },
+    { "@type": "City", "name": "Devrek" },
+    { "@type": "City", "name": "Çaycuma" },
+    { "@type": "City", "name": "Alaplı" },
+    { "@type": "City", "name": "Gökçebey" },
+    { "@type": "City", "name": "Kilimli" },
+    { "@type": "City", "name": "Kozlu" }
   ],
   "sameAs": [
     "https://www.instagram.com/cakmakoglu.mobilya/"
@@ -1513,15 +1935,128 @@
     "name": "Mobilya & Dekorasyon Hizmetleri",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mutfak Dolabı İmalatı" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Akrilik Mutfak Dolabı" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lake Mutfak" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Membran Kapak Mutfak" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yatak Odası Takımı" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gardırop İmalatı" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Banyo Dolabı İmalatı" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "TV Ünitesi" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Çocuk & Genç Odası" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Çocuk Odası Dekorasyonu" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Genç Odası Takımı" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vestiyer & Antre Dolabı" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ev Dekorasyonu" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "İşyeri Dekorasyonu" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobilya Montajı" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ofis Dekorasyonu" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mağaza Dekorasyonu" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobilya Montajı" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobilya Ustası" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobilya Tamiri" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobilya Boyama" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Anahtar Teslim Dekorasyon" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tadilat ve Yenileme" } }
     ]
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bartın, Karabük ve Zonguldak'ta mobilya dekorasyon hizmeti veriyor musunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, Bartın merkez ve tüm ilçeleri (Amasra, Kurucaşile, Ulus), Karabük merkez ve ilçeleri (Safranbolu, Eflani, Eskipazar, Ovacık, Yenice), Zonguldak merkez ve ilçeleri (Ereğli, Devrek, Çaycuma, Alaplı, Gökçebey, Kilimli, Kozlu) dahil olmak üzere Batı Karadeniz Bölgesi'nin tamamında mobilya dekorasyon, mutfak dolabı imalatı, yatak odası takımı, banyo dolabı, mobilya ustası ve mobilya tamiri hizmetleri veriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mutfak dolabı imalatı için keşif ve fiyat teklifi ücretli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır, mutfak dolabı imalatı, banyo dolabı, yatak odası takımı ve diğer tüm mobilya ve dekorasyon projelerinde keşif, ölçü alma ve ön fiyat teklifi tamamen ücretsizdir. Talebinizi 0532 178 34 71 numarasından bize ileterek randevu oluşturabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Akrilik, lake ve membran kapak arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Akrilik kapaklar parlak ve modern bir görünüm sunar, çiziklere karşı dayanıklıdır. Lake kapaklar mat veya parlak finishli olup hem klasik hem modern dekorasyonlara uyum sağlar. Membran kapaklar uygun fiyatlı, dayanıklı ve geniş renk seçeneklerine sahiptir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mobilya tamiri ve mobilya ustası hizmetinde hangi işleri yapıyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mobilya ustası hizmetlerimiz kapsamında çekmece tamiri, kapı tamiri, menteşe değişimi, kulp değişimi, mobilya boyama, cila yenileme, dolap arkası ve yan duvar tamiri, mutfak dolabı yenileme, eski yatak odası tadilatı, antika mobilya restorasyonu ve döşeme değişimi gibi pek çok işi gerçekleştiriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Anahtar teslim ev dekorasyonunda neler dahil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anahtar teslim dekorasyonda 3D tasarım, malzeme seçimi, mobilya imalatı, boya ve badana, parke uygulaması, fayans, alçıpan, asma tavan, aydınlatma, mobilya montajı ve son temizlik hizmetlerinin tamamı dahildir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Çocuk odası ve genç odası takımları kaç yaş aralığına uygun?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çocuk odası takımlarımız 3-12 yaş arası çocuklar için, genç odası takımlarımız ise 13-22 yaş arası gençler ve üniversite öğrencileri için tasarlanmaktadır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "İşyeri ve mağaza dekorasyonunda ne kadar sürede teslim ediyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İşyeri dekorasyonu, ofis dekorasyonu ve mağaza dekorasyonu projelerinin teslim süresi, mekanın metrekaresi ve uygulamanın kapsamına göre 7-30 gün arasında değişir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Garantili hizmet veriyor musunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, ürettiğimiz tüm mutfak dolapları, yatak odası takımları, banyo dolapları ve diğer özel imalat mobilyalar 2 yıl üretim ve işçilik garantisi kapsamındadır."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://www.cakmakoglumobilya.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mobilya Dekorasyon Hizmetleri",
+      "item": "https://www.cakmakoglumobilya.com/#hizmetler"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hizmet Bölgeleri",
+      "item": "https://www.cakmakoglumobilya.com/#bolgeler"
+    }
+  ]
 }
 </script>
 
@@ -1670,6 +2205,14 @@
         const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 90;
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
       }
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      item.classList.toggle('open');
     });
   });
 </script>
