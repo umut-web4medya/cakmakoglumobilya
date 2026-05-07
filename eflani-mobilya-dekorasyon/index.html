@@ -62,7 +62,10 @@
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
   html, body { overflow-x: hidden; max-width: 100vw; width: 100%; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
   body {
     font-family: 'Inter', sans-serif;
     background: #ffffff;
@@ -425,6 +428,78 @@
     border-radius: 50%;
     animation: hero-pulse 8s ease-in-out infinite;
   }
+
+  /* Gallery masonry */
+  .masonry {
+    column-count: 3;
+    column-gap: 20px;
+  }
+  @media (max-width: 1024px) { .masonry { column-count: 2; } }
+  @media (max-width: 640px) { .masonry { column-count: 1; } }
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 14px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  }
+  .masonry-item:hover img { transform: scale(1.07); }
+  .masonry-item::after {
+    content: '\f00e';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(225,6,0,0.7), rgba(0,0,0,0.7));
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .masonry-item:hover::after { opacity: 1; }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 60px rgba(225,6,0,0.4);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 50px; height: 50px;
+    background: #e10600;
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    transition: transform 0.3s ease;
+  }
+  .lightbox-close:hover { transform: rotate(90deg) scale(1.1); }
 
   /* Article */
   .article-content h2 {
@@ -1115,27 +1190,35 @@
   </div>
 </section>
 
-<!-- ============== KOMŞU İLÇELER ============== -->
+<!-- ============== GALLERY ============== -->
 <section class="py-24 md:py-28 bg-brand-gray relative">
   <div class="container mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
-      <span class="section-subtitle">Yakındaki Hizmet Bölgeleri</span>
-      <h2 class="section-title">Eflani Çevresinde de <span class="text-brand-red">Hizmetinizdeyiz</span></h2>
-      <p class="text-gray-600 text-lg mt-4">Eflani'ye yakın diğer ilçelerimizde de aynı kaliteli mobilya & dekorasyon hizmetlerini sunuyoruz.</p>
+      <span class="section-subtitle">Galerimiz</span>
+      <h2 class="section-title">Tamamladığımız <span class="text-brand-red">Projelerimiz</span></h2>
+      <p class="text-gray-600 text-lg mt-4">Mutfaktan ofise, salondan yatak odasına kadar gerçekleştirdiğimiz projelerden seçkiler.</p>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-      <a href="/safranbolu-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Safranbolu Mobilya</a>
-      <a href="/eskipazar-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Eskipazar Mobilya</a>
-      <a href="/ovacik-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Ovacık Mobilya</a>
-      <a href="/yenice-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Yenice Mobilya</a>
-      <a href="/ulus-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Ulus Mobilya</a>
-      <a href="/amasra-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Amasra Mobilya</a>
-      <a href="/kurucasile-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Kurucaşile Mobilya</a>
-      <a href="/eregli-mobilya-dekorasyon/" class="area-card"><i class="fas fa-arrow-right"></i> Ereğli Mobilya</a>
+    <div class="masonry" data-aos="fade-up">
+      <div class="masonry-item gallery-item"><img src="/images/tv-unitesi.webp" alt="TV Ünitesi Projesi" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/isyeri-dekorasyon.webp" alt="İşyeri Dekorasyon Projesi" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/yatak-odasi-dekorasyon.webp" alt="Yatak Odası Dekorasyon Projesi" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/salon-dekorasyon.webp" alt="Salon Dekorasyon Projesi" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/mutfak-dekorasyon.webp" alt="Mutfak Dekorasyon Projesi" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/isyeri-dekorasyon2.webp" alt="İşyeri Dekorasyon 2" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/yatak-odasi-dekorasyon2.webp" alt="Yatak Odası Dekorasyon 2" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/cekmece.webp" alt="Çekmece Detay Projesi" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/dolap.webp" alt="Dolap Projesi" loading="lazy" /></div>
+      <div class="masonry-item gallery-item"><img src="/images/isyeri-dekorasyon3.webp" alt="İşyeri Dekorasyon 3" loading="lazy" /></div>
     </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Görsel Görüntüleyici">
+  <button class="lightbox-close" aria-label="Kapat"><i class="fas fa-times"></i></button>
+  <img id="lightboxImg" src="" alt="" />
+</div>
 
 <!-- ============== FOOTER (Anasayfayla aynı) ============== -->
 <footer class="modern-footer pt-20 pb-0 relative">
@@ -1408,6 +1491,26 @@
     else scrollTopBtn.classList.remove('visible');
   });
   scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.parentElement.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox(); });
 </script>
 
 </body>
